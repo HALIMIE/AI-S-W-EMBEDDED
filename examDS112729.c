@@ -2,7 +2,7 @@
 //
 //#include <stdio.h>
 //#include <stdlib.h>
-//typedef struct _score  //typedef ¾ÈÇÏ¸é ¸Å¹ø struct _score ÇØÁà¾ßÇÔ
+//typedef struct _score  //typedef ì•ˆí•˜ë©´ ë§¤ë²ˆ struct _score í•´ì¤˜ì•¼í•¨
 //{
 //	int id;
 //	char name[10];
@@ -11,7 +11,7 @@
 //}SCORE;
 ////void func(SCORE *p)
 ////{
-////	p->jumsu = 200; //(*p).jumsu = 200;ÀÌ°Å¸¦ È­»ìÇ¥·Î ÇÒ¼öÀÖ´Â°Å¿©
+////	p->jumsu = 200; //(*p).jumsu = 200;ì´ê±°ë¥¼ í™”ì‚´í‘œë¡œ í• ìˆ˜ìˆëŠ”ê±°ì—¬
 ////	
 ////}
 ////
@@ -24,11 +24,11 @@
 ////void main(void)
 ////{
 ////
-////	//SCORE x;    //cÃÊ±âÈ­ÇÒ¶§ SCORE x= {10,"Lim", 100} À¸·Î ¼±¾ğÇØµµµÊ
+////	//SCORE x;    //cì´ˆê¸°í™”í• ë•Œ SCORE x= {10,"Lim", 100} ìœ¼ë¡œ ì„ ì–¸í•´ë„ë¨
 ////	//x.id = 10;
 ////	//x.jumsu = 100;
-////	//strcpy(x.name, "Lim"); //¹®ÀÚ¿­ º¹»çÇÔ¼ö ³»°¡ ³Ö°íÀÚÇÏ´Â °ø°£ÀÇ ½ÃÀÛÁÖ¼Ò¸¦ ¾Ë·ÁÁà¾ßÇÔ
-////	////				// ³Î¹®ÀÚ ³ª¿Ã¶§±îÁö º¹»çÇØÁÖ´Â strcpy
+////	//strcpy(x.name, "Lim"); //ë¬¸ìì—´ ë³µì‚¬í•¨ìˆ˜ ë‚´ê°€ ë„£ê³ ìí•˜ëŠ” ê³µê°„ì˜ ì‹œì‘ì£¼ì†Œë¥¼ ì•Œë ¤ì¤˜ì•¼í•¨
+////	////				// ë„ë¬¸ì ë‚˜ì˜¬ë•Œê¹Œì§€ ë³µì‚¬í•´ì£¼ëŠ” strcpy
 ////
 ////
 ////	//func(&x);
@@ -42,7 +42,7 @@
 //
 ////void func(SCORE *p)
 ////{
-////	p->jumsu = 200; //(*p).jumsu = 200;ÀÌ°Å¸¦ È­»ìÇ¥·Î ÇÒ¼öÀÖ´Â°Å¿©
+////	p->jumsu = 200; //(*p).jumsu = 200;ì´ê±°ë¥¼ í™”ì‚´í‘œë¡œ í• ìˆ˜ìˆëŠ”ê±°ì—¬
 ////	
 ////}
 //
@@ -55,11 +55,11 @@
 //void main(void)
 //{
 //
-//	//SCORE x;    //cÃÊ±âÈ­ÇÒ¶§ SCORE x= {10,"Lim", 100} À¸·Î ¼±¾ğÇØµµµÊ
+//	//SCORE x;    //cì´ˆê¸°í™”í• ë•Œ SCORE x= {10,"Lim", 100} ìœ¼ë¡œ ì„ ì–¸í•´ë„ë¨
 //	//x.id = 10;
 //	//x.jumsu = 100;
-//	//strcpy(x.name, "Lim"); //¹®ÀÚ¿­ º¹»çÇÔ¼ö ³»°¡ ³Ö°íÀÚÇÏ´Â °ø°£ÀÇ ½ÃÀÛÁÖ¼Ò¸¦ ¾Ë·ÁÁà¾ßÇÔ
-//	////				// ³Î¹®ÀÚ ³ª¿Ã¶§±îÁö º¹»çÇØÁÖ´Â strcpy
+//	//strcpy(x.name, "Lim"); //ë¬¸ìì—´ ë³µì‚¬í•¨ìˆ˜ ë‚´ê°€ ë„£ê³ ìí•˜ëŠ” ê³µê°„ì˜ ì‹œì‘ì£¼ì†Œë¥¼ ì•Œë ¤ì¤˜ì•¼í•¨
+//	////				// ë„ë¬¸ì ë‚˜ì˜¬ë•Œê¹Œì§€ ë³µì‚¬í•´ì£¼ëŠ” strcpy
 //
 //
 //	//func(&x);
@@ -85,7 +85,7 @@
 //
 //#define MAX_ST		20
 //
-//SCORE exam[MAX_ST]; //20°³Â¥¸® ½ºÄÚ¾î ±¸Á¶Ã¼ ¹Ş°Ú´Ù´Â ¼±Çü ÀÚ·á±¸Á¶¿¡ »ç¿ëÇÒ ÀúÀå°ø°£
+//SCORE exam[MAX_ST]; //20ê°œì§œë¦¬ ìŠ¤ì½”ì–´ êµ¬ì¡°ì²´ ë°›ê² ë‹¤ëŠ” ì„ í˜• ìë£Œêµ¬ì¡°ì— ì‚¬ìš©í•  ì €ì¥ê³µê°„
 //
 //SCORE test[22] = { {10, 50, "kim"}, {2, 80, "lew"}, {8, 50, "lew"}, {4, 45, "lee"}, {1, 90, "song"},\
 //				   {3, 45, "kim"}, {5, 50, "song"}, {9, 100, "lee"}, {7, 75, "moon"}, {6, 90, "park"},\
@@ -104,7 +104,7 @@
 //}
 //
 #if 0
-#define _CRT_SECURE_NO_WARNINGS // Visual StudioÀÇ °æ¿ì scanf ¿À·ù ¹æÁö¿ëÀ¸·Î ½Ç½ÀÀÚ·á »ó´Ü¿¡ Ç×»ó Ãß°¡
+#define _CRT_SECURE_NO_WARNINGS // Visual Studioì˜ ê²½ìš° scanf ì˜¤ë¥˜ ë°©ì§€ìš©ìœ¼ë¡œ ì‹¤ìŠµìë£Œ ìƒë‹¨ì— í•­ìƒ ì¶”ê°€
 #include <stdio.h>
 
 typedef struct _score
@@ -239,22 +239,22 @@ int Create_Data(SCORE * p)
 
 int Insert_Data(SCORE *p)
 {
-	//ºóÀÚ¸® Ã£°í ½Í¾î
+	//ë¹ˆìë¦¬ ì°¾ê³  ì‹¶ì–´
 	int i;
-	for (i = 0; i < MAX_ST; i++) //½º¹«°³ ´Ùµ¹¾Ò´Âµ¥ºóÀÚ¸®¾øÀ¸¸é Ç®¹æÀÌ´Ï -1¸®ÅÏ
+	for (i = 0; i < MAX_ST; i++) //ìŠ¤ë¬´ê°œ ë‹¤ëŒì•˜ëŠ”ë°ë¹ˆìë¦¬ì—†ìœ¼ë©´ í’€ë°©ì´ë‹ˆ -1ë¦¬í„´
 	{
-		if (exam[i].id == 0) //µé¾î°¥ÀÚ¸® ºóÀÚ¸®
+		if (exam[i].id == 0) //ë“¤ì–´ê°ˆìë¦¬ ë¹ˆìë¦¬
 		{
 			exam[i] = *p;
 			return i;
 		}
-		if (exam[i].id == p->id) //°°Àº°Ô ÀÌ¹Ì ÀÖÀ¸¸é
+		if (exam[i].id == p->id) //ê°™ì€ê²Œ ì´ë¯¸ ìˆìœ¼ë©´
 		{
 			return -2;
 		}
 
 	}
-	return -1; // Ç®¹æ½Ã -1¸®ÅÏ
+	return -1; // í’€ë°©ì‹œ -1ë¦¬í„´
 	
 }
 
@@ -587,7 +587,7 @@ void main(void)
 //
 //void func(int *p)
 //{
-//	//*(p + 2) = 50;          // °°Àº¼Ò¸®ÀÓ
+//	//*(p + 2) = 50;          // ê°™ì€ì†Œë¦¬ì„
 //	p[2] = 50;
 //}
 //
@@ -645,7 +645,7 @@ int * f2(void)
 
 void main(void)
 {
-	// p, q, r ¼±¾ğ
+	// p, q, r ì„ ì–¸
 
 	int (*p)(int, int);
 	
@@ -655,7 +655,7 @@ void main(void)
 
 
 
-	// p, q, r¿¡ ´ëÀÀ ÇÔ¼ö ´ëÀÔ
+	// p, q, rì— ëŒ€ì‘ í•¨ìˆ˜ ëŒ€ì…
 
 	p = add;
 
@@ -676,14 +676,14 @@ void main(void)
 	f1();
 	printf("%d\n", f2()[2]);
 
-	// À§¿Í µ¿ÀÏÇÑ °á°ú°¡ ³ª¿Àµµ·Ï p, q, r·Î ½ÇÇà
+	// ìœ„ì™€ ë™ì¼í•œ ê²°ê³¼ê°€ ë‚˜ì˜¤ë„ë¡ p, q, rë¡œ ì‹¤í–‰
 
 
 
 }
 #endif
 
-//11¿ù29ÀÏ  ÀÚ·á±¸Á¶
+//11ì›”29ì¼  ìë£Œêµ¬ì¡°
 
 #if 0
 #include <stdio.h>
@@ -720,11 +720,11 @@ void Make_Test_Data(int n)
 
 int Create_Data(SCORE * p)
 {
-	printf("\n»ç¹øÀ» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("\nì‚¬ë²ˆì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %d", &p->id);
-	printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %s", p->name);
-	printf("Á¡¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf("%d", &p->jumsu);
 	p->next = 0;
 
@@ -767,7 +767,7 @@ int Count_Data(void)
 	return cnt;
 }
 
-int Insert_Data(SCORE * p)   //ºó¹æÀ» Ã£¾Æ¼­ Ã£Àº¹æÀÇ ¹øÈ£¸¦ ¸®ÅÏÇØÁÖ´Â ±â´É Â÷°Å³ª ±âÁ¸¿¡ °°À¸¸é ¿¡·¯ÄÚµå 
+int Insert_Data(SCORE * p)   //ë¹ˆë°©ì„ ì°¾ì•„ì„œ ì°¾ì€ë°©ì˜ ë²ˆí˜¸ë¥¼ ë¦¬í„´í•´ì£¼ëŠ” ê¸°ëŠ¥ ì°¨ê±°ë‚˜ ê¸°ì¡´ì— ê°™ìœ¼ë©´ ì—ëŸ¬ì½”ë“œ 
 {
 	int i, empty = 0;
 
@@ -810,20 +810,20 @@ int Insert_Node(SCORE * d)
 	current = exam[r].next;
 	if(exam[next].id > exam[r].id)
 */
-	//r? ¸µÅ©µû¶ó ½ºÄµÇÏ¸é¼­ ÀÚ¸®¸¦ ³Ö¾îÁÖ¸éµÊ
-	// ÄÚµå ÀÛ¼º
+	//r? ë§í¬ë”°ë¼ ìŠ¤ìº”í•˜ë©´ì„œ ìë¦¬ë¥¼ ë„£ì–´ì£¼ë©´ë¨
+	// ì½”ë“œ ì‘ì„±
 
 	int r = Insert_Data(d);
 
 	if (r < 0)
 		return r;
 
-	int curr = 0;//Çìµå´Ï±ñ Ä¿·±Æ® 0
-	int next = exam[curr].next; //ÇìµåÀÇ ¾ÆÀÌµğ´Ï±ñ 0À¸·Î ¼¼ÆÃÇØ³õÀ¸¸é ¾ÈµÅ¿ë
+	int curr = 0;//í—¤ë“œë‹ˆê¹ ì»¤ëŸ°íŠ¸ 0
+	int next = exam[curr].next; //í—¤ë“œì˜ ì•„ì´ë””ë‹ˆê¹ 0ìœ¼ë¡œ ì„¸íŒ…í•´ë†“ìœ¼ë©´ ì•ˆë¼ìš©
 
-	for(;;)  //while °°Àº°Ü
+	for(;;)  //while ê°™ì€ê²¨
 	{
-		if ((next ==0) ||(exam[next].id > (d->id))) //Ã£¾ÒÀ¸¸é 
+		if ((next ==0) ||(exam[next].id > (d->id))) //ì°¾ì•˜ìœ¼ë©´ 
 		{
 			exam[r].next = next;
 			exam[curr].next = r;
@@ -831,7 +831,7 @@ int Insert_Node(SCORE * d)
 		}
 
 		curr = next;
-		next = exam[curr].next; //¸øÃ£¾ÒÀ¸¸é ÇÑ¹ß ÀüÁø
+		next = exam[curr].next; //ëª»ì°¾ì•˜ìœ¼ë©´ í•œë°œ ì „ì§„
 	}
 }
 
@@ -885,11 +885,11 @@ void Make_Test_Data(int n)
 
 int Create_Data(SCORE * p)
 {
-	printf("\n»ç¹øÀ» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("\nì‚¬ë²ˆì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %d", &p->id);
-	printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %s", p->name);
-	printf("Á¡¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf("%d", &p->jumsu);
 	p->next = 0;
 
@@ -998,13 +998,13 @@ int Print_All_Node(void)
 }
 int Search_Id_Node(int id)
 {
-	int next = exam[0].next;  // Ã¹ ¹øÂ° ³ëµå¸¦ °¡¸®Å´
+	int next = exam[0].next;  // ì²« ë²ˆì§¸ ë…¸ë“œë¥¼ ê°€ë¦¬í‚´
 
 	for (;;)
 	{
 		if ((next == 0) || (exam[next].id > id))
 		{
-			return -1;  // Ã£Áö ¸øÇÑ °æ¿ì
+			return -1;  // ì°¾ì§€ ëª»í•œ ê²½ìš°
 		}
 		if (exam[next].id == id)
 			return next;
@@ -1078,11 +1078,11 @@ void Make_Test_Data(int n)
 
 int Create_Data(SCORE * p)
 {
-	printf("\n»ç¹øÀ» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("\nì‚¬ë²ˆì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %d", &p->id);
-	printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf(" %s", p->name);
-	printf("Á¡¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À => ");
+	printf("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ => ");
 	scanf("%d", &p->jumsu);
 	p->next = 0;
 
@@ -1261,8 +1261,8 @@ void main(void)
 }
 
 #endif
-
-//print ÂüÁ¶ ÄÚµå : printf("STACK[%d] = %d\n", i, Stack[i]);
+#if 0
+//print ì°¸ì¡° ì½”ë“œ : printf("STACK[%d] = %d\n", i, Stack[i]);
 #include <stdio.h>
 
 #define MAX_STACK		10
@@ -1281,7 +1281,7 @@ int Sptr = STACK_EMPTY;
 
 int Push_Stack(int data)
 {
-	if (Sptr == STACK_FULL) //½ºÅÃÆ÷ÀÎÅÍ°¡ 1ÀÌ¸é 
+	if (Sptr == STACK_FULL) //ìŠ¤íƒí¬ì¸í„°ê°€ 1ì´ë©´ 
 	{
 		return -1;
 	}
@@ -1382,4 +1382,144 @@ void main(void)
 	}
 
 	printf("\n");
+}
+#endif
+
+#include <stdio.h>
+ 
+#define MAX_Q       8
+#define Q_MIN       0
+#define Q_MAX       MAX_Q
+ 
+int In_Queue(int data);
+int Out_Queue(int *p);
+int Print_Queue(void);
+int Count_Full_Data_Queue(void);
+int Count_Empty_Data_Queue(void);
+ 
+int a[MAX_Q + 1] = { 1,2,3,4,5,6,7,8,9 };
+int Queue[MAX_Q];
+int Wrptr = Q_MIN;
+int Rdptr = Q_MIN;
+ 
+int In_Queue(int data)
+{
+    if (((Wrptr + 1) % MAX_Q) == Rdptr)
+    {
+        return -1;
+    }
+ 
+    Queue[Wrptr] = data;
+    Wrptr = (Wrptr + 1) % MAX_Q;
+    return 1;
+}
+ 
+int Out_Queue(int *p)
+{
+    if (Rdptr == Wrptr)
+    {
+        return -1;
+    }
+ 
+    *p = Queue[Rdptr];
+    Rdptr = (Rdptr + 1) % MAX_Q;
+    return 1;
+}
+ 
+int Print_Queue(void)
+{
+    int i;
+    int rd = Rdptr;
+    int n = Count_Full_Data_Queue();
+ 
+    for (i = 0; i < n; i++)
+    {
+        printf("Queue[%d] = %d\n", rd, Queue[rd]);
+        rd = (rd + 1) % MAX_Q;
+    }
+ 
+    return n;
+}
+ 
+int Count_Full_Data_Queue(void)
+{
+    if (Rdptr > Wrptr) return MAX_Q - (Rdptr - Wrptr);
+    return Wrptr - Rdptr;
+}
+ 
+int Count_Empty_Data_Queue(void)
+{
+    return MAX_Q - Count_Full_Data_Queue() - 1;
+}
+ 
+void main(void)
+{
+    int i;
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        printf("%d, ", a[i]);
+    }
+ 
+    printf("\n");
+ 
+    for (i = 0; i < 3; i++)
+    {
+        printf("Queue Result = %d\n", In_Queue(a[i]));
+        printf("Print Result = %d, ", Print_Queue());
+        printf("Full = %d ", Count_Full_Data_Queue());
+        printf("Empty = %d\n", Count_Empty_Data_Queue());
+        printf("Wrptr = %d, Rdptr = %d\n", Wrptr, Rdptr);
+    }
+ 
+    for (i = 0; i < 3; i++)
+    {
+        a[i] = 0;
+    }
+ 
+    for (i = 0; i < 3; i++)
+    {
+        printf("Dequeue Result = %d\n", Out_Queue(&a[i]));
+        printf("Print Result = %d, ", Print_Queue());
+        printf("Full = %d ", Count_Full_Data_Queue());
+        printf("Empty = %d\n", Count_Empty_Data_Queue());
+        printf("Wrptr = %d, Rdptr = %d\n", Wrptr, Rdptr);
+    }
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        printf("%d, ", a[i]);
+    }
+ 
+    printf("\n");
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        printf("Queue Result = %d\n", In_Queue(a[i]));
+        printf("Print Result = %d, ", Print_Queue());
+        printf("Full = %d ", Count_Full_Data_Queue());
+        printf("Empty = %d\n", Count_Empty_Data_Queue());
+        printf("Wrptr = %d, Rdptr = %d\n", Wrptr, Rdptr);
+    }
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        a[i] = 0;
+    }
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        printf("Dequeue Result = %d\n", Out_Queue(&a[i]));
+        printf("Print Result = %d, ", Print_Queue());
+        printf("Full = %d ", Count_Full_Data_Queue());
+        printf("Empty = %d\n", Count_Empty_Data_Queue());
+        printf("Wrptr = %d, Rdptr = %d\n", Wrptr, Rdptr);
+    }
+ 
+    for (i = 0; i < (MAX_Q + 1); i++)
+    {
+        printf("%d, ", a[i]);
+    }
+ 
+    printf("\n");
 }
