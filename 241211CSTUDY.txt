@@ -1,38 +1,296 @@
 
- - #include<stdio.h>
+241211
+
+# 4.수동 소자와 전원
+
+resistance 
+
+serial resistance parallel resistance 
+
+저항과 전원의 병렬/직렬  
+
+---
+
+-~~-~~- 저항 직렬 :  resistance X2
+
+R = R1+R2  —→ bigger than bigone 
+
+---
+
+-~~-
+
+-~~-       저항의 병렬 연결 : resistance 1/2
+
+R = (R1*R2) / (R1+R2) —→ smaller than smallone
+
+---
+
+/*
+
+-~~-~~-  전원의 직렬 연결 : voltage X2
+
+V = V1+V2  —→ 직렬로 연결된 전압원의 전압은 각각의 전압의 합
+
+-~~-~~-  전원의 병렬 연결 : voltage same
+
+V = V1 = V2  —→ 병렬로 연결된 전압원의 전압은 모두 동일
+
+*/ // by AI
+
+-저항이 크면 전류는 줄어든다 
+
+V=IR
+
+I=R/V
+
+R=I/V
+
+-THROUGH - HOLE TYPE Resistance 
+
+검     0 
+
+갈     1
+
+빨     2
+
+주     3
+
+노     4
+
+초     5
+
+파     6
+
+보     7
+
+회     8
+
+흰     9
+
+금     0.1                 오차 범위 +-5%
+
+은     0.01              오차 범위 +-10%
+
+무                          오차 범위 +-20%
+
+ex) 빨 주 빨 23  *  10^2 
+
+-SMD type resistance 
+
+surface mounting device   write down the numbers on the surface 
+
+ex) 103 → 10*10^3 → 10KOhm
+
+오차 error 5%  대게 Jtype
+
+-Condencer 콘덴서  purpose to collecting electric charges
+
+전하를 모아 놓는 용도 저장, 충전, 전원 안정화 용도
+
+BULK Cap - 순간적인 전원 이상에 대응 큰 용량
+
+Bypass cap - IC등의 갑작스러운 동작으로 전원이 문제되는 것을 방지 작은 용량
+
+콘덴서는 C로 표기 condensor = capacitor is denoted by C and the unit is F(Farad)
+
+parallel connection of capacitors  : C = C1 + C2 ← bigger than big one 
+
+serial connection of capacitors : C = (C1 * C2) / (C1 + C2) ← smaller than small one
+
+**opposite with resistor**
+
+---
+
+-Inductor denoted by L and the unit is H(Henry)
+
+전자기장을 이용한 전자부품, 과도 전류의 변화를 이용해 전압의 변화를 유도해냄 
+
+parallel connection of inductor : L = (L1 * L2) / (L1 + L2) ←smaller then small one
+
+serial connection of inductor : L = L1+L2 ← bigger than big one
+
+similar with resistor
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d2f12fdc-6ccf-4d9f-a602-eae0e774f57a/a8c57204-82da-446d-99c8-9c20461b3e45/image.png)
+
+---
+
+AC-DC 변환 전원 
+
+-Linear Adaptor
+
+transformer 권선비를 이용해 전압을 낮추고 다이오드로 정류하여 구현
+
+일반적으로 열이 많이 발생하고 부피가 크지만 노이즈가 덜 발생한다
+
+-SMPS Adaptor switching Mode Power Supply
+
+교류를 작은 시간 단위로 쪼개 (chopping) 이를 다시 조합하여 전압을 낮춤 
+
+껐다 켰다를 반복해 전압을 조정 
+
+소형, 저발열, 노이즈는 큰편 (because of chopping)
+
+요즘 대부분 SMPS 방식 
+
+DC-DC 변환 전원
+
+-Linear Regulator
+
+반도체 소자에 의하여 전압을 원하는 레벨로 DOWN 시키는 방식 
+
+간단, 저가 , 열이 많이 발생
+
+-SMPS Regulator switching Mode Power Supply
+
+SMPS방식으로 DC전압을 조절할 수 있다.
+
+발열 적지만 노이즈 발생
+
+입력 전압의 큰 변화에도 출력의 변화가 거의 없이 안정적 설계가 가능 
+
+Step-Down으로 전압 하강, Step-Up 으로 전압 승강이 가능 
+
+---
+
+Cortex M3-MINI 
+
+BULK & BYPASS
+
+# 5. 능동 소자와 직접 회로
+
+Passive Device 수동 소자 : 에너지를 소비만 하는 소자 ex) resistor, capacitor, inductor, fuse, switch…
+
+electron(전하)의 양을 고정적으로 조절할 수는 있으나 전기적으로는 조절할 수 없는 소자
+
+Active Device 능동 소자 : 에너지를 제어할 수 있는 소자 
+
+전하의 흐르는 양을 전기적으로 제어, 조절 할 수 있는 소자
+
+Semiconductor 반도체 : 전기를 안 통하게 하기도 하고 통하는 양을 조절 하기도 할 수 있는 도체
+
+Diode 다이오드 : 전기의 역류를 막아주는 수문과 같은 역할 
+
+Diode는 정방향 + → - 로의 흐름은 ON 역방향은 OFF
+
+PN Junction : P는 HOLE이 가득하고 N은 Electron이 가득한 곳
+
+P와N을 붙이면 PN접합이 되고 그게 Diode → Unipolar
+
+Diode의 약자 D 
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d2f12fdc-6ccf-4d9f-a602-eae0e774f57a/b406e0fd-08b8-40d6-8c5f-c94492a99932/image.png)
+
+LED : light emit Diode
+
+---
+
+전압 분배의 법칙
+
+부하가 직렬로 연결되면 전류는 같고 **전압은 분배** 된다
+
+전류 분배의 법칙 
+
+부하가 병렬로 연결되면 전압은 같고 **전류는 분배** 된다
+
+Transistor 트랜지스터 
+
+전류의 흐름의 양을 조절하는 장치
+
+Bipolar Junction( NPN or PNP ) = Transfer Resistor = Transistor
+
+Transistor는 증폭 및 스위칭 목적으로 만들어진 소자 
+
+약자 TR 회로에서는 Q로 표기
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d2f12fdc-6ccf-4d9f-a602-eae0e774f57a/690c8574-3953-4ffa-845a-a4a9f0d09d21/image.png)
+
+트랜지스터의 역할 
+
+증폭 Amplifier
+
+스위칭 switching
+
+PNP
+
+PNP는 0V가 인가 되면 transistor가 ON 된다.
+
+      +V가 인가 되면 스위치 OFF
+
+NPN는 0V가 인가 되면 transistor OFF
+
+            +V 인가되면 ON
+
+FET field effect TR - 전압 drop이 별로 발생하지 않음
+
+FET는 S(source), G(gate), D(drain)으로 구성 
+
+S = E , G = B D = C
+
+IC : integrated Circuit
+
+ASIC(Application Specific IC)
+
+soC(System on chip)
+
+---
+
+GPIO
+
+PUSH PULL & OPEN Drain Output
+
+-PUSH PULL은 0or1 출력
+
+ Vin 0 → Vout 0
+
+ Vin 1 → Vout 1
+
+-Open Drain Output
+
+Vin 1→ output 출력 상태
+
+Vin 0 → 출력 LOW
+
+pushpull과 달리 출력 0or1이 아니라 Floting 0으로 생성
+
+---
+
+C STUDY
+
+#include<stdio.h>
 int main()
 {
 #include <stdio.h>
 
-    int main()
-    {
+```
+int main()
+{
 
-        int money = 78000;
-        //1000W -    how many  
+    int money = 78000;
+    //1000W -    how many
 
-        money / 50000;
-        money % 50000 / 10000;
-        money % 10000 / 5000;
-        money % 5000 / 1000;
+    money / 50000;
+    money % 50000 / 10000;
+    money % 10000 / 5000;
+    money % 5000 / 1000;
 
-        // 그 자리 수 하나 읽고 싶을때 위에 단위수로 나머지 연산 후 자기 단위로 몫 연산을 하면 좋다 
-        int a = 2345;
-        int a4, a3, a2, a1;
+    // 그 자리 수 하나 읽고 싶을때 위에 단위수로 나머지 연산 후 자기 단위로 몫 연산을 하면 좋다
+    int a = 2345;
+    int a4, a3, a2, a1;
 
-        a4 = a / 1000;
-        a3 = (a % 1000) / 100;
-        a2 = (a % 100) / 10;
-        a1 = (a % 10);
-        printf("1000자리=%d, 100자리=%d, 10자리=%d, 1자리=%d\n", a4, a3, a2, a1);
-    }
+    a4 = a / 1000;
+    a3 = (a % 1000) / 100;
+    a2 = (a % 100) / 10;
+    a1 = (a % 10);
+    printf("1000자리=%d, 100자리=%d, 10자리=%d, 1자리=%d\\n", a4, a3, a2, a1);
 }
 
+```
 
+}
 
--ASCII CODE 
- 대문자A 65 소문자a 87 숫자 0 48
-
-
+- ASCII CODE
+대문자A 65 소문자a 87 숫자 0 48
 -
 
 
