@@ -1,0 +1,39 @@
+
+ - #include<stdio.h>
+int main()
+{
+#include <stdio.h>
+
+    int main()
+    {
+
+        int money = 78000;
+        //1000W -    how many  
+
+        money / 50000;
+        money % 50000 / 10000;
+        money % 10000 / 5000;
+        money % 5000 / 1000;
+
+        // 그 자리 수 하나 읽고 싶을때 위에 단위수로 나머지 연산 후 자기 단위로 몫 연산을 하면 좋다 
+        int a = 2345;
+        int a4, a3, a2, a1;
+
+        a4 = a / 1000;
+        a3 = (a % 1000) / 100;
+        a2 = (a % 100) / 10;
+        a1 = (a % 10);
+        printf("1000자리=%d, 100자리=%d, 10자리=%d, 1자리=%d\n", a4, a3, a2, a1);
+    }
+}
+
+
+
+-ASCII CODE 
+ 대문자A 65 소문자a 87 숫자 0 48
+
+
+-
+
+
+
