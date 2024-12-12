@@ -1,0 +1,927 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>241212</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1595971c-281a-807f-83db-f582dc670947" class="page sans"><header><h1 class="page-title">241212</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>생성자</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/ACg8ocLpDFFMDJM6YvTnMRwyCJHPZ29JsoZ7yCFpOiWgOYwH7MpNKyVY=s100" class="icon user-icon"/>하 </span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>생성 일시</th><td><time>@2024년 12월 11일 오후 4:46</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>태그</th><td><span class="selected-value select-value-color-brown">Firmware</span></td></tr></tbody></table></header><div class="page-body"><p id="15a5971c-281a-8011-9215-f11e133fc1e9" class="">
+</p><p id="15a5971c-281a-8007-9c24-f8a6b0b18eca" class="">
+</p><p id="15a5971c-281a-808e-8344-ebb09586f0c0" class="">
+</p><h1 id="15a5971c-281a-8000-876d-e5a9f7b9b924" class="">6.GPIO</h1><p id="15a5971c-281a-805c-b778-cccad0e2c4ba" class="">
+</p><p id="15a5971c-281a-80c8-b1c3-c35a07f33c8f" class="">CRL 4bit가 한 개의 핀에 대한 설정</p><p id="15a5971c-281a-802c-baeb-eb84f728948f" class="">CRH</p><p id="15a5971c-281a-8001-b1c8-c4f2e625b5a9" class="">
+</p><p id="15a5971c-281a-807b-a5e2-c6379397553e" class="">MODE 의 00 10 11 세 버전은 pin의 최대 출력 주파수 설정 </p><p id="15a5971c-281a-8001-9e2e-d95a472f5b50" class="">50MHZ</p><p id="15a5971c-281a-80d3-b3bd-cba59a5bd925" class="">  2MHZ 파형이 안 나올 때</p><p id="15a5971c-281a-80a4-9c91-f165137ea00c" class="">
+</p><p id="15a5971c-281a-80e6-ac5b-dd257440bc0d" class="">
+</p><p id="15a5971c-281a-80cd-af0d-fcc66e262a85" class="">지금 사용하는 핀이 얼마 정도의 주파수가 쓰이는 지 생각하고 설정해 주는게 좋다</p><p id="15a5971c-281a-8016-a988-d5bfc4f7acef" class="">50mhz출력으로 설정하고 </p><p id="15a5971c-281a-807f-989e-fe00e3aa4260" class="">2mhz출력으로 설정하고 </p><p id="15a5971c-281a-80ce-bd1b-dd52120a13f9" class="">1mhz  </p><p id="15a5971c-281a-8092-bb7a-fab68faa598c" class="">50 - 샤프한 파형 -  확 당겨 지기 때문에 시스템이 불안해지고 잡음이 생길 수 있다.</p><p id="15a5971c-281a-8014-9997-fd288d5d6162" class="">  2  -부드러운 파형 -  완만하게 올라갔다 완만하게 내려감</p><p id="15a5971c-281a-80bf-a0cf-d4987d5bcf16" class="">
+</p><p id="15a5971c-281a-8052-a0d7-e3c91ae51c56" class="">전자파를 얼마나 발산하는지 EMI승인을 받을 때</p><p id="15a5971c-281a-8098-ae50-c5b8467b425a" class="">
+</p><p id="15a5971c-281a-80b5-996f-f91734dc3402" class="">저항 크게하고 , 컨덕터 달고, 인덕터 달고 하면 샤프한 파형이 적어들지만 </p><p id="15a5971c-281a-80c3-9414-d153daa658b8" class="">원가 상승 ,면적 상승으로 인해 </p><p id="15a5971c-281a-80ce-a8f1-ec76bd68d2f4" class="">
+</p><p id="15a5971c-281a-80b1-b896-ffcc2204781b" class="">GPIOB_CRH xxxx xxxx xxxx xxxx xxxx xxxx 0110 0110</p><p id="15a5971c-281a-801a-9450-da68dd1049b0" class="">
+</p><p id="15a5971c-281a-808d-9599-fd10f23ba462" class="">ODR output data register</p><p id="15a5971c-281a-80c9-ab2f-d6ccb16a9710" class="">GPIOB_ODR xxxx xxxx xxxx xxxx xxxx xx?? xxxx xxxx</p><p id="15a5971c-281a-8097-8aea-e5214fcbafa3" class="">
+</p><p id="15a5971c-281a-8057-9aa7-f6cd70c86599" class="">LED0 (B8) on</p><p id="15a5971c-281a-805a-9406-e54dc5c98797" class="">LED1 (B9) off  xxxx xxxx xxxx xxxx xxxx 0010 xxxx xxxx</p><p id="15a5971c-281a-8098-9812-c562053e0ea7" class="">all on 0000</p><p id="15a5971c-281a-8040-863a-fc4c4e451083" class="">all off 1111</p><p id="15a5971c-281a-8016-a14f-d5061a6dfed6" class="">
+</p><p id="15a5971c-281a-8036-8783-c21ca3b45029" class="">0x100 ← 메모리 100번지에 정수 10을 쓰고 싶다</p><p id="15a5971c-281a-80a8-bd23-c84a57164ae6" class=""> int *p;</p><p id="15a5971c-281a-8082-b6c2-ed79fcbbca38" class=""><del>p= 0x100;</del> 타입이 안 맞기 때문에 캐스팅을 해야 한다</p><p id="15a5971c-281a-803c-94e1-d183ca16c021" class="">p = (int *)0x100;</p><p id="15a5971c-281a-801c-86b0-d54097227593" class="">*p = 10 ; </p><p id="15a5971c-281a-80cc-8753-dd10b9edd7ad" class="">p가 0x200에 있었다고 하면 </p><p id="15a5971c-281a-80b2-8213-e6cac953b28b" class="">0x200에 있는 값을 → R0레지스터로 불러 와야 함 → 그리고 [R0]에 10을 넣기 때문에 두 번 연산</p><p id="15a5971c-281a-806d-840b-d1a49b287470" class="">
+</p><p id="15a5971c-281a-80fb-8ee3-d8dfc1e414bb" class="">그래서 다이렉트 연산을 해보자 </p><p id="15a5971c-281a-80bc-906d-fd051545ba95" class="">
+</p><p id="15a5971c-281a-8058-9422-f8d6bea578ae" class=""><del>p = (int *)0x100;</del></p><p id="15a5971c-281a-802a-91c2-e3c093562eba" class=""><del>*p = 10 ;  </del></p><p id="15a5971c-281a-803c-8bf7-ddf59946f1c5" class="">치환해보자</p><p id="15a5971c-281a-80fc-8081-ec78098b4ae7" class=""><span style="border-bottom:0.05em solid">*(int *)0x100</span> = 10;</p><p id="15a5971c-281a-80c4-9a55-c4d226957946" class="">가독성이 안 좋으니 밑줄 부분을 define 해보자</p><p id="15a5971c-281a-8037-a977-d682cfef5623" class="">#define           LED        *(int *)0x100</p><p id="15a5971c-281a-8023-bcdb-eb51fc1ef018" class="">LED = 10;</p><p id="15a5971c-281a-8028-ada8-ce033eddfe02" class="">
+</p><p id="15a5971c-281a-804a-a760-cc3af133cd82" class="">매크로 1.매개변수 괄호로 감싸기 2.전체 괄호로 감싸기 3. 세미콜론 금지</p><p id="15a5971c-281a-8094-8143-c3672dfa22a3" class=""> #def  SQR(x)  ((x)*(x)) //  ;세미콜론 금지</p><p id="15a5971c-281a-8099-8b7a-d3662649ae9a" class="">
+</p><p id="15a5971c-281a-80c7-999b-cebd35597ddb" class="">
+</p><p id="15a5971c-281a-809b-a5c8-feac1a884755" class="">Port configuration register low (GPIOx_CRL) </p><p id="15a5971c-281a-809c-9aa9-dbe7c1da0595" class="">0~31</p><p id="15a5971c-281a-804e-a4bf-dfcbf9bfe81e" class="">
+</p><p id="15a5971c-281a-8063-8116-c7c7e615e46b" class="">Port configuration register high (GPIOx_CRH)</p><p id="15a5971c-281a-809e-9bb2-fc7393690e0f" class="">32~63</p><p id="15a5971c-281a-8088-bbe4-cbe981516782" class="">
+</p><p id="15a5971c-281a-80a7-99f8-cbad7e424fac" class="">Port input data register (GPIOB_IDR)</p><p id="15a5971c-281a-80bc-89b4-f38f1459303c" class="">
+</p><p id="15a5971c-281a-8088-a8cd-d6a98634ac93" class="">Port output data register (GPIOB_ODR)</p><p id="15a5971c-281a-8083-9db6-f37e1de6fd89" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-80fc-9dc7-dd5708094e2a" class="code"><code class="language-C">#include &lt;device_driver.h&gt;
+
+//  define을 작성하시오
+
+#define GPIOB_CRH (*(unsigned long *)0x40010C04)  //주소안에있는값
+#define GPIOB_ODR (*(unsigned long *)0x40010C0C)  //unsigned long int, int는 생략
+
+void Main(void)
+{
+	  // 
+	  RCC_APB2ENR |= (1&lt;&lt;3);
+
+	  // GPB[9:8]을 출력 모드로 설정
+
+	  GPIOB_CRH = 0x00000066; //0x66
+
+	  // GPB[9:8]에 LED0은 OFF, LED1은 ON 시키도록 설정
+
+	  GPIOB_ODR = 0x00000100;  //0x100
+}
+</code></pre><p id="15a5971c-281a-80ab-a5c2-ddbae230a678" class="">레지스터는 unsigned로 가는거다.</p><p id="15a5971c-281a-80cc-8c00-dff60521837a" class="">
+</p><h1 id="15a5971c-281a-8027-b094-fd5d12eaac35" class="">7. type Qualifier</h1><p id="15a5971c-281a-80d9-adcf-e42e3ede2474" class="">
+</p><p id="15a5971c-281a-8004-bc8c-cc14033ff58e" class="">volatile - 변덕스러운 int니깐 마음대로 예측하지말아라 , 최적화 금지</p><p id="15a5971c-281a-800a-bde1-c136b2c797bd" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-80d8-aef8-deb66104d6cb" class="code"><code class="language-C">#define RCC_APB2ENR   (*(unsigned long*)0x40021018)
+
+#define GPIOB_CRH      (*(unsigned long*)0x40010C04)
+#define GPIOB_ODR      (*(unsigned long*)0x40010C0C)
+
+void Main(void)
+{
+	volatile int i;
+
+	Uart_Init(115200);
+	Uart_Printf(&quot;LED Toggling Test #1\n&quot;);
+	RCC_APB2ENR |= (1&lt;&lt;3);
+
+	GPIOB_CRH = 0x66 &lt;&lt; 0;
+
+	for(;;)
+	{
+		GPIOB_ODR = 0x0 &lt;&lt; 8;
+		for(i=0; i&lt;0x40000; i++);
+		GPIOB_ODR = 0x3 &lt;&lt; 8;
+		for(i=0; i&lt;0x40000; i++);
+	}
+}</code></pre><p id="15a5971c-281a-80f1-9cd7-c27c86697047" class="">int i 로 선언시 깜빡거리지 않았던 led가 volatile int i로 선언 시 깜빡인다.</p><p id="15a5971c-281a-80bc-9669-fb27afb33ab9" class="">
+</p><p id="15a5971c-281a-802c-afef-d919838f9cd2" class="">when u want to use delay - use volatile</p><p id="15a5971c-281a-8039-b9ec-e22519f2e36d" class="">
+</p><p id="15a5971c-281a-8059-8a52-c3eae180b1ae" class="">컴파일러가 최적화할때는 함수단위로  한다 </p><p id="15a5971c-281a-8072-b5ed-d45c3d518359" class="">글로벌은 예측하지못한다 </p><p id="15a5971c-281a-80f4-a183-d32304b3caeb" class="">local은 예측할수있지만 </p><p id="15a5971c-281a-808a-ae3a-e4956486ad23" class="">
+</p><p id="15a5971c-281a-80b3-a7d1-f013b9f9a7e2" class="">레지스터 하드웨어 장치가 예약해놓은 메모리 </p><p id="15a5971c-281a-80f6-8478-d22936334b89" class="">내가 바꾸지않아도 하드웨어 에서 바꿀수도있어 </p><p id="15a5971c-281a-80b3-b393-ca3b411f434b" class="">그러니 최적화하지 말아라 메모리주소가 변덕스러운게 아니고 </p><p id="15a5971c-281a-80cc-beb2-dd9cb6ed5289" class="">메모리안에 값이 변덕스러운거</p><p id="15a5971c-281a-80ec-95cb-e597a497d483" class="">따라서 컴파일러가 임의로 최적화 시키는것을 방지해서 volatile 선언 필요</p><p id="15a5971c-281a-8085-8e13-ece18b854eed" class="">#define TIMER (*(volatile unsigned long *)0xE000E018)</p><p id="15a5971c-281a-800f-8006-c4361c914a1c" class="">
+</p><p id="15a5971c-281a-806b-aaee-d6d43e2e3d7b" class="">어떤 메모리를 다른 곳과 공유하면 volatile이 필요하다 </p><ol type="1" id="15a5971c-281a-80ae-93db-c76632515ca8" class="numbered-list" start="1"><li>memory Mapped I/O 하드웨어 레지스터는 volatile 필요</li></ol><ol type="1" id="15a5971c-281a-8010-a25f-d8c6a7f6e690" class="numbered-list" start="2"><li>DMA에 의한 전송</li></ol><ol type="1" id="15a5971c-281a-80a2-b915-eb90619557fe" class="numbered-list" start="3"><li>인터럽트 처리루틴</li></ol><ol type="1" id="15a5971c-281a-80dc-9c66-c02bdb02fa29" class="numbered-list" start="4"><li>멀티프로세스 또는 멀티 프로세싱에 의한 메모리 공유의 경우</li></ol><p id="15a5971c-281a-80e7-b764-cde69a61ca2b" class="">주변장치는 반드시 volatile unsigned</p><p id="15a5971c-281a-808a-8a89-c4c5e0dd8253" class="">
+</p><p id="15a5971c-281a-806e-8999-e3301acf2468" class="">volatile를 붙여야할때 안붙이면 사고난다 </p><p id="15a5971c-281a-8012-a643-eb706ea29230" class="">but const와 static은 안 붙여도 사고는 안난다 </p><p id="15a5971c-281a-801a-9d27-e6e17acd8ac4" class="">
+</p><p id="15a5971c-281a-80ec-aaed-e7755a20783a" class="">하지만 const와 static은 최적화용도</p><p id="15a5971c-281a-80bd-bf06-c156eac022ea" class="">
+</p><ul id="15a5971c-281a-8081-b407-d4fa1a66f046" class="bulleted-list"><li style="list-style-type:disc"> const </li></ul><p id="15a5971c-281a-809e-a0c8-df441c4bf8e6" class=""> 타입이 read only가 되게함</p><p id="15a5971c-281a-8042-87ac-efe6a10338fd" class="">포인터랑 사용이 같이 되는 경우가 반대</p><p id="15a5971c-281a-801d-bb30-ffe3d1aa3e95" class="">또는 배열 </p><p id="15a5971c-281a-80ee-a856-c49285492918" class="">
+</p><ul id="15a5971c-281a-80f2-bea1-f0127df2b121" class="bulleted-list"><li style="list-style-type:disc">새로운 레지스터 정의 방식  </li></ul><p id="15a5971c-281a-809e-ab6e-e71d66c4fd7e" class="">연속한 주소 0x1000 0x1004 0x1008 … 각자 크기가 다를 수 있는데</p><p id="15a5971c-281a-80c3-8478-e06a40ea6cfb" class="">배열을 쓰기에는 크기가 각자 다르니 구조체 타입으로 선언한다음</p><p id="15a5971c-281a-8077-915d-f3b2c6d96bc9" class="">*포인터를 사용해 바라보면 어떨까</p><p id="15a5971c-281a-8077-9fd5-c0aac6d578dc" class="">
+</p><p id="15a5971c-281a-8036-870d-da333e787489" class="">#define __I volatile const     //읽기전용, 최적화금지</p><p id="15a5971c-281a-806e-a83a-e2fc152efa82" class="">#define __O volatile</p><p id="15a5971c-281a-80fc-946f-c443bfcc5aa1" class="">#define __IO volatile</p><p id="15a5971c-281a-80c5-a48e-d82680d7fe8a" class="">
+</p><p id="15a5971c-281a-80cd-a7fa-d58aae54899b" class="">typedef struct</p><p id="15a5971c-281a-8026-848e-e5c2d434e6d7" class="">{ </p><p id="15a5971c-281a-8071-a121-de261217a142" class="">__IO uint32_t CTRL;</p><p id="15a5971c-281a-807a-9b35-e9f4daebc675" class="">__IO uint32_t LOAD;</p><p id="15a5971c-281a-801f-afd5-cd393ebdd0ea" class="">__IO uint32_t VAL;</p><p id="15a5971c-281a-807c-afb1-cf7f4edc5589" class="">__I uint32_t CALIB;</p><p id="15a5971c-281a-807a-ac9b-df30f4c80a54" class="">} SysTick_Type;</p><p id="15a5971c-281a-80a8-9f25-e21716bde799" class="">
+</p><p id="15a5971c-281a-80f7-8db9-f53954df25fe" class="">#define SCS_BASE             (0xE000E000)</p><p id="15a5971c-281a-80ab-b48b-f5b79f9dc989" class="">#define SysTick_BASE       (SCS_BASE + 0x0010)</p><p id="15a5971c-281a-8001-ba9d-ce534a476856" class="">
+</p><p id="15a5971c-281a-80df-a7fa-c89000030111" class="">#define SysTick                  ((SysTick_Type *)SysTick_BASE)</p><p id="15a5971c-281a-801b-a7cc-ce4bc55b564b" class="">c코드에서 장치명→레지스터 형식으로 접근한다</p><p id="15a5971c-281a-80dc-9072-c77e28d81eef" class="">ex) SysTick→VAL = 0x1000;</p><p id="15a5971c-281a-801c-80b6-eb87a1689c49" class="">
+</p><p id="15a5971c-281a-80b7-96aa-cbb0ed7da0bc" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-80c8-84bf-e1f9b9f05c0e" class="code"><code class="language-JavaScript">#include &quot;device_driver.h&quot;
+ 
+void Main(void)
+{
+    volatile int i;
+ 
+    Uart_Init(115200);
+    Uart_Printf(&quot;CMSIS Based Register Define\n&quot;);
+ 
+   
+    RCC-&gt;APB2ENR |= (1&lt;&lt;3);
+ 
+    // LED Pin을 출력으로 설정
+    GPIOB-&gt;CRH = 0x66;
+ 
+    for(;;)
+    {
+        // LED 모두 ON
+        GPIOB-&gt;ODR = 0x0 &lt;&lt; 8;
+ 
+        for(i=0; i&lt;0x40000; i++);
+ 
+        // LED 모두 OFF
+        GPIOB-&gt;ODR = 0x3 &lt;&lt; 8;
+ 
+        for(i=0; i&lt;0x40000; i++);
+    }
+}</code></pre><p id="15a5971c-281a-80fa-ac92-ca924f64fb3b" class="">
+</p><p id="15a5971c-281a-809c-ac32-f567866ff03a" class="">GPIOB→CRH , GPIOB→ODR 사용</p><p id="15a5971c-281a-8076-992b-ee766f64234e" class="">
+</p><p id="15a5971c-281a-805e-92c9-ca9041730eec" class="">
+</p><h1 id="15a5971c-281a-80b3-9856-e4fab2b9e470" class="">8. 비트 연산과 매크로 활용</h1><p id="15a5971c-281a-80d2-bc77-f523a5b663d3" class="">read modity and write</p><p id="15a5971c-281a-80da-888f-f27c539999b5" class="">원하는 비트만 set 할 수 있어야 한다.</p><p id="15a5971c-281a-80c5-8bd2-dbe1f3668edc" class="">
+</p><p id="15a5971c-281a-80dd-9763-cd0cf4a75d8b" class="">OR  |</p><p id="15a5971c-281a-80e1-82ab-df4bf12e6532" class="">원하는 비트만 1로 SET</p><p id="15a5971c-281a-801a-b475-f65d627bbdc6" class="">1로 만들고 싶은 곳은 1, dontcare 인 부분은 0 </p><p id="15a5971c-281a-8033-b1e1-e94d74867622" class="">a = a | (             );</p><p id="15a5971c-281a-8070-891b-e32648f6fdd1" class="">a |= (                 );</p><p id="15a5971c-281a-802c-818a-d7ba831b9084" class="">
+</p><p id="15a5971c-281a-801d-993c-dcf1b54f9139" class="">ex) 0번,7,8,9,23,24,25,26,27을 1로 만들고 싶을때</p><p id="15a5971c-281a-8040-abab-e52777a2bb6c" class="">a| = (0x1f&lt;&lt;23) | (0x7&lt;&lt;7) | (1&lt;&lt;0)</p><p id="15a5971c-281a-8059-ada0-ebddd9de3601" class="">반전시키고 싶을때는</p><p id="15a5971c-281a-804f-a0c3-ff3c16c2b4c9" class="">a^ = (0x1f&lt;&lt;23) | (0x7&lt;&lt;7) | (1&lt;&lt;0)</p><p id="15a5971c-281a-80aa-9f3e-feccd1046a5b" class="">
+</p><p id="15a5971c-281a-807e-a9dd-f3fb3d0cee75" class="">XOR ^</p><p id="15a5971c-281a-8026-a758-ed12ee10b8b6" class="">내가 원하는 비트만 뒤집는 역할 bitinvert</p><p id="15a5971c-281a-8051-900f-fbd6c450b75a" class="">뒤집고싶은 값에 0 그대로 두고싶은 값에 1 두고 XOR</p><p id="15a5971c-281a-80ea-98aa-df777a8b834b" class="">
+</p><p id="15a5971c-281a-8061-869f-c1ff0eeb19bf" class="">AND &amp;</p><p id="15a5971c-281a-8000-94b1-dfc49547b490" class="">원하는 비트만 0으로 clear bit clear </p><p id="15a5971c-281a-8015-b951-e44a4bfcd450" class="">&amp;=~()</p><p id="15a5971c-281a-8054-8ad2-d306da52178f" class="">
+</p><p id="15a5971c-281a-8036-8fc4-e4c70d7ea2e2" class="">
+</p><p id="15a5971c-281a-8040-b635-d2fd63e845fc" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-8082-a6bf-cc3fdac4ca74" class="code"><code class="language-C">void Main(void)
+{
+	/* 이 부분은 임의로 바꾸지 마시오 */
+	RCC-&gt;APB2ENR |= (1&lt;&lt;3);
+
+	/* 비트 연산을 이용하여 LED0을 ON, LED1을 OFF로 하는 코드를 설계하시오 */
+	GPIOB-&gt;CRH |= ((0x3&lt;&lt;1)|(0x3&lt;&lt;5));
+	GPIOB-&gt;CRH &amp;= ~(0x99);
+	GPIOB-&gt;ODR |= (1&lt;&lt;9);
+	GPIOB-&gt;ODR &amp;= ~(1&lt;&lt;8);
+
+
+
+}
+</code></pre><p id="15a5971c-281a-8075-b288-cd9bd1628831" class="">CRH 0110 0110</p><p id="15a5971c-281a-803c-857d-c1771799dc41" class="">ODR xx10 xxxx xxxx 를 코딩해본것 </p><p id="15a5971c-281a-8039-bd36-d14fdddb5d66" class="">메모리 엑세스가 너무 많기 때문에 줄여보자</p><p id="15a5971c-281a-8051-919f-f15af0436d81" class="">use block write (field write)</p><p id="15a5971c-281a-803a-ad14-e6e930a59a94" class="">
+</p><p id="15a5971c-281a-80a2-9471-fac18ea2e139" class="">
+</p><p id="15a5971c-281a-8006-9a3f-d1cc334ad819" class="">모든 디바이스는 init이 필요하다 </p><p id="15a5971c-281a-8036-a908-ef389f9c6a0e" class="">LED inti 초기화</p><p id="15a5971c-281a-803b-818f-cb9039f62a23" class="">1.LED출력 포트로 만들고</p><p id="15a5971c-281a-8081-a625-d19639a4b51f" class="">2.LED다꺼 </p><p id="15a5971c-281a-8000-8ec6-da8591a1f26a" class="">
+</p><hr id="15a5971c-281a-807f-8099-e9d550eab3c1"/><p id="15a5971c-281a-8060-8892-db43da69d8b3" class="">
+</p><p id="15a5971c-281a-80fb-9109-c7d1b14f94ec" class="">
+</p><p id="15a5971c-281a-80c6-a224-c696407e5cba" class="">bread board 이용해서 PA2 LED 키는 작업</p><p id="15a5971c-281a-807b-b9dc-eb17902c2e76" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-8063-b0bb-d76d79cf1a7e" class="code"><code class="language-C">void Main(void)
+{
+	volatile int i;
+
+	
+	Macro_Set_Bit(RCC-&gt;APB2ENR, 3);
+
+	Macro_Write_Block(GPIOA-&gt;CRL,0xf,0x6,8);
+    Macro_Write_Block(GPIOA-&gt;ODR,0x1,0x0,2);
+ 
+
+ 
+ 
+
+	for(;;)
+	{
+	/* LED 반전 및 Delay, Delay는 0x80000으로 설정 */
+    Macro_Write_Block(GPIOA-&gt;ODR,0x1,0x0,2);
+	 for(i=0;i&lt;0x80000;i++);
+	Macro_Write_Block(GPIOA-&gt;ODR,0x1,0x1,2);
+	 for(i=0;i&lt;0x80000;i++);
+	 
+
+
+	}
+	//_delay_ms(800);
+}
+</code></pre><p id="15a5971c-281a-8031-b24c-f09c084baa17" class="">
+</p><p id="15a5971c-281a-80bf-8280-f8a03f5d80ad" class="">
+</p><p id="15a5971c-281a-80fb-84ee-e5d512da2ac5" class="">GPIOB→CRH = (GPIOB→CRH &amp; ~ ((1&lt;&lt;7)|(3&lt;&lt;3)|(1&lt;&lt;0)))|((3&lt;&lt;5)|(3&lt;&lt;1))</p><p id="15a5971c-281a-8024-923c-c57013e972d2" class="">GPIOB→ODR = (GPIOB→ODR &amp; ~ (0x1&lt;&lt;8))|(1&lt;&lt;9);</p><p id="15a5971c-281a-80ae-954b-c3a76f2b8403" class="">
+</p><p id="15a5971c-281a-80ea-9b4d-e1f6938f3458" class="">GPIOB→CRH = (GPIOB→CRH &amp; ~(0xff&lt;&lt;0))|(0x66&lt;&lt;0);</p><p id="15a5971c-281a-809d-8aad-fe39acaa725a" class="">GPIOB→ODR = (GPIOB→ODR &amp; ~(0x3&lt;&lt;8))|(0x2&lt;&lt;8);</p><p id="15a5971c-281a-8051-9b63-f6a11d126c4c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15a5971c-281a-809d-bf9d-ff13b24f61e2" class="code"><code class="language-C">#include &quot;device_driver.h&quot;
+
+
+#define GPIOBCRH (*(volatile unsigned long*)0x40010c04)
+#define GPIOBODR (*(volatile unsigned long*)0x40010C0C)
+
+void LED_Init(void)
+{
+	/* 다음 코드는 수정하지 마시오 */
+	Macro_Set_Bit(RCC-&gt;APB2ENR, 3);
+    //Macro_Write_Block(GPIOB-&gt;CRH,0xff,0x66,0); //macro use
+
+
+	//GPIOBCRH |= ((1&lt;&lt;1)|(1&lt;&lt;2)|(1&lt;&lt;5)|(1&lt;&lt;6));    //and or use
+	//GPIOBCRH &amp;= ~((1&lt;&lt;0)|(1&lt;&lt;3)|(1&lt;&lt;4)|(1&lt;&lt;7));
+	//GPIOBCRH = (GPIOBCRH &amp; ~((1&lt;&lt;0)|(1&lt;&lt;3)|(1&lt;&lt;4)|(1&lt;&lt;7)))|((1&lt;&lt;1)|(1&lt;&lt;2)|(1&lt;&lt;5)|(1&lt;&lt;6)); //together
+	GPIOBCRH = (GPIOBCRH &amp; ~(0xff&lt;&lt;0))|((1&lt;&lt;1)|(1&lt;&lt;2)|(1&lt;&lt;5)|(1&lt;&lt;6)); //field write use
+
+
+
+}
+
+void LED_Display(unsigned int num)
+{
+  switch(num%4){
+
+  case 0 :
+  //Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x3,8);
+  //GPIOBODR |= ((1&lt;&lt;9)|(1&lt;&lt;8));  
+  GPIOBODR |= (0x3&lt;&lt;8); //use or make 11xxxxxxxx //field write skill
+
+  break;
+  case 1:
+  //Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x2,8);
+  //GPIOBODR |= ((1&lt;&lt;9));
+  //GPIOBODR &amp;= ~(1&lt;&lt;8);
+  GPIOBODR = (GPIOBODR &amp; ~(0x1&lt;&lt;8))|(0x1&lt;&lt;9);
+  break;
+
+  case 2:
+  //Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x1,8);
+  //GPIOBODR |= ((1&lt;&lt;8));
+  //GPIOBODR &amp;= ~(1&lt;&lt;9); 
+  GPIOBODR = (GPIOBODR &amp; ~(0x1&lt;&lt;9))|(0x1&lt;&lt;8);
+  break;
+
+  case 3:
+  //Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x0,8);
+   
+  //GPIOBODR &amp;= ~((1&lt;&lt;9)|(1&lt;&lt;8));
+  GPIOBODR &amp;= ~(0x3&lt;&lt;8);  //use and to make 00xxxxxxxx
+  break; 
+  }
+
+}
+
+void LED_All_On(void)
+{
+	 //Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x0,8);
+	 //GPIOBODR &amp;= ~((1&lt;&lt;9)|(1&lt;&lt;8));
+	  GPIOBODR &amp;= ~(0x3&lt;&lt;8); 
+
+
+
+}
+
+void LED_All_Off(void)
+{
+	//Macro_Write_Block(GPIOB-&gt;ODR,0x3,0x3,8);
+ 	//GPIOBODR |= ((1&lt;&lt;9)|(1&lt;&lt;8));  
+	//GPIOBODR = (GPIOBODR &amp; ~(0x3&lt;&lt;8))|(0x3&lt;&lt;8);
+	GPIOBODR |= (0x3&lt;&lt;8); //use or make 11xxxxxxxx
+}
+</code></pre><p id="15a5971c-281a-8030-aaa6-c3531a5c03c4" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
