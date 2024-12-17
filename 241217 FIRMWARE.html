@@ -1,0 +1,828 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>241217</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="15f5971c-281a-800f-8f37-d06f4de51443" class="page sans"><header><h1 class="page-title">241217</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>생성자</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/ACg8ocLpDFFMDJM6YvTnMRwyCJHPZ29JsoZ7yCFpOiWgOYwH7MpNKyVY=s100" class="icon user-icon"/>하 </span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>생성 일시</th><td><time>@2024년 12월 17일 오전 9:10</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>태그</th><td><span class="selected-value select-value-color-brown">Firmware</span></td></tr></tbody></table></header><div class="page-body"><h1 id="15f5971c-281a-80ea-8bdd-d4a2d2c59b38" class="">TIMER</h1><p id="15f5971c-281a-8053-aad9-fe4810923f73" class="">주파수(f)는 신호의 주기 (T)를 알고있을떄 구할수 있다.</p><p id="15f5971c-281a-80be-afb3-dd0242cde3fa" class="">f=1/T</p><p id="15f5971c-281a-80e5-83e0-fb9e77bd81b3" class="">주파수는 1초동안 반복되는 신호의 횟수</p><p id="15f5971c-281a-80a9-bd1a-d36787e12c15" class="">신호 주기와 주파수는 역수</p><p id="15f5971c-281a-8003-8d9b-dae991058cda" class="">
+</p><p id="15f5971c-281a-80ab-be4b-f5a6dc62798b" class="">펄스는 단위 시간내에서 발생하는 신호의 개수를 말하고</p><p id="15f5971c-281a-807a-9536-f56bb7d61646" class="">주파수는 1초동안 몇번의 펄스가 발생하는지 나타내며 pls/시간으로 계산할수있다.</p><p id="15f5971c-281a-80e3-bb59-f878ecf22fbe" class="">
+</p><p id="15f5971c-281a-80e8-8917-d06a5e43af7d" class="">delay 100 - 100msec</p><p id="15f5971c-281a-809b-bcbb-dfa92181cc46" class="">delay 20 -  20msec</p><p id="15f5971c-281a-8057-b982-df461425bcdb" class="">
+</p><p id="15f5971c-281a-80fd-87d6-e0ddf802c4a9" class="">1msec을 만들라면 몇펄스가 필요한가 </p><p id="15f5971c-281a-8045-8556-da51e865868b" class="">1msec/20usec = 50 pulse</p><p id="15f5971c-281a-8094-9f75-cb42e354fbdc" class="">100msec 가 지나려면  5000pulse 필요</p><p id="15f5971c-281a-800e-8e3f-c5955d4d84b3" class="">
+</p><p id="15f5971c-281a-807b-b749-deace0b82a62" class="">계속 쳐다보고 있지 말고 max0xffff를 넣지말고 </p><p id="15f5971c-281a-8071-a1e7-c5fba4964cae" class="">내가 원하는 5000pulse값을 넣고 0될때까지 기다림</p><p id="15f5971c-281a-808f-952e-de2c35f4c241" class="">polling으로 쳐다보고 있지말고 0되면 flag발생시켜줘 </p><p id="15f5971c-281a-80e1-82a9-f4bdce9612e7" class="">
+</p><p id="15f5971c-281a-805d-bc5a-deb5028872ef" class="">delay 구현</p><p id="15f5971c-281a-805d-8838-d3af2494a17e" class="">timer를 키고</p><p id="15f5971c-281a-802f-b7bd-e2ce5ef118b6" class="">TIMER CR1 값을 설정해준다 down count, one pulse</p><p id="15f5971c-281a-80f9-a9db-e58cc1ad6812" class="">TIM2→CR1의 4번째 비트는 DIR upcount,downcount 결정  0이면 up /  1이면 down</p><p id="15f5971c-281a-8070-81a1-f1b623bfa5e1" class="">TIM2→CR1의 3번째 비트는 OPM one pulse mode 0:repeat 1:oneshot</p><p id="15f5971c-281a-8041-9e5a-ea194b7e2d56" class="">TIM2→PSC는 20usec tick이 되도록 (50KHz) 분주기 </p><p id="15f5971c-281a-803d-b2f1-c66d102f9b04" class="">TIM2→ARR (pls) 초기값 설정 time *50 </p><p id="15f5971c-281a-8072-89fe-e69136249f92" class="">TIM2→EGR timer의 manaul update event를 발생시키는 레지스터</p><p id="15f5971c-281a-804b-aaf6-ec343b3fc4ae" class="">TIM2→SR timer의 상태를 파악하는 레지스터 </p><p id="15f5971c-281a-8083-9845-e2d79e4c97c7" class="">1업데이트 발생함 0발생안함</p><p id="15f5971c-281a-80be-af0f-e698102f2708" class="">SR의 0번 비트를 클리어  flag를 보기위해</p><p id="15f5971c-281a-8030-85c0-c21ae226eae5" class="">TIM2 →DIER  interrupt enable 0비트가 0일 경우 인터럽트 불허 1일 경우 인터럽트 허용 </p><p id="15f5971c-281a-80df-aada-cbc387c1791a" class="">
+</p><p id="15f5971c-281a-809e-9d95-f3851a838a1d" class="">while (!내가기다리는조건)</p><p id="15f5971c-281a-8094-a2d8-eb634d264531" class="">sr레지스터의 0번비트가 1이되는걸 기다리는거에 대한 부정</p><p id="15f5971c-281a-8017-a840-fb72ccf3ceb2" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-801e-a4b1-c51dd99e2998" class="code"><code class="language-C">void TIM2_Delay(int time)
+{
+	Macro_Set_Bit(RCC-&gt;APB1ENR, 0);
+
+	// TIM2 CR1 설정: down count, one pulse
+	TIM2-&gt;CR1 = (1&lt;&lt;3)|(1&lt;&lt;4);
+
+	// PSC 초기값 설정 =&gt; 20usec tick이 되도록 설계 (50KHz)
+	TIM2-&gt;PSC = 72000/50 - 1 ;
+
+	// ARR 초기값 설정 =&gt; 요청한 time msec에 해당하는 초기값 설정
+	TIM2-&gt;ARR = (time *50) ;
+
+	// UG 이벤트 발생
+	TIM2-&gt;EGR |= (1&lt;&lt;0);
+
+	// Update Interrupt Pending Clear
+	TIM2-&gt;SR &amp;= ~(1&lt;&lt;0);
+
+
+	// Update Interrupt Enable
+	TIM2-&gt;DIER |=(1&lt;&lt;0);
+
+	// TIM2 start
+	TIM2-&gt;CR1 |= (1&lt;&lt;0); 
+
+	// Wait timeout
+	while((TIM2-&gt;SR &amp; (1&lt;&lt;0))==0);
+
+	// Stop and Power off
+	Macro_Clear_Bit(TIM2-&gt;CR1, 0);
+	Macro_Clear_Bit(TIM2-&gt;DIER, 0);
+}
+</code></pre><p id="15f5971c-281a-8029-87aa-ca5cab96f67e" class="">
+</p><p id="15f5971c-281a-80fd-a5de-dada4e7807e0" class="">
+</p><p id="15f5971c-281a-800e-a52d-e64a7222f935" class="">65536 pulse 초과 불과 </p><p id="15f5971c-281a-802e-acba-c13b9fccd490" class="">1.3초가 최대 time * 50</p><p id="15f5971c-281a-80e4-9c83-d45cc0a79bfe" class="">65536/50</p><p id="15f5971c-281a-806c-b498-f0a3bd973217" class="">
+</p><p id="15f5971c-281a-80d3-bdee-fe5c1f19e226" class="">주파수를 낮은거 프리스케일러를 높이는거 </p><p id="15f5971c-281a-8031-8ebb-e7304d8f3c84" class="">1Km는 tick이 최소 1ms</p><p id="15f5971c-281a-80d1-b11f-eb6b591f4641" class="">주파수를 높이면 세세함이 높아지고 시간이 짧아진다. </p><p id="15f5971c-281a-80d8-9111-f3398b6bfa13" class="">주파수를 낮게하면 세세함이 줄어들지만  시간이 길어진다.</p><p id="15f5971c-281a-80ee-92da-ca0bddb5d9a9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-806e-b46d-e2511fbd6fd0" class="code"><code class="language-C">void TIM2_Delay(int time)
+{
+	int i;
+	unsigned int t = TIME2_PLS_OF_1ms * time;
+
+	Macro_Set_Bit(RCC-&gt;APB1ENR, 0);
+
+	TIM2-&gt;PSC = (unsigned int)(TIMXCLK/(double)TIM2_FREQ + 0.5)-1;
+	TIM2-&gt;CR1 = (1&lt;&lt;4)|(1&lt;&lt;3);
+	TIM2-&gt;ARR = 0xffff;
+	Macro_Set_Bit(TIM2-&gt;EGR,0);
+	Macro_Set_Bit(TIM2-&gt;DIER, 0);
+
+	for(i=0; i&lt;(t/0xffffu); i++)
+	{
+		Macro_Set_Bit(TIM2-&gt;EGR,0);
+		Macro_Clear_Bit(TIM2-&gt;SR, 0);
+		Macro_Set_Bit(TIM2-&gt;CR1, 0);
+		while(Macro_Check_Bit_Clear(TIM2-&gt;SR, 0));
+	}
+
+	TIM2-&gt;ARR = t % 0xffffu;
+	Macro_Set_Bit(TIM2-&gt;EGR,0);
+	Macro_Clear_Bit(TIM2-&gt;SR, 0);
+	Macro_Set_Bit(TIM2-&gt;CR1, 0);
+	while (Macro_Check_Bit_Clear(TIM2-&gt;SR, 0));
+
+	Macro_Clear_Bit(TIM2-&gt;CR1, 0);
+	Macro_Clear_Bit(TIM2-&gt;DIER, 0);
+}
+</code></pre><p id="15f5971c-281a-80f0-9378-c930e65793bc" class="">
+</p><p id="15f5971c-281a-8084-a575-cccfbe21a982" class="">
+</p><p id="15f5971c-281a-80b2-9212-e09050a0a2e6" class="">timer - stopwatch, delay, repeat </p><p id="15f5971c-281a-80fd-93eb-d8ab3a088e42" class="">
+</p><p id="15f5971c-281a-80f6-a4ba-c92da8a6297c" class="">void TIM2_Delay(int time)<br/>{<br/>	Macro_Set_Bit(RCC-&gt;APB1ENR, 0);<br/><br/>	// TIM2 CR1 설정: down count, one pulse<br/>	TIM2-&gt;CR1 = (1&lt;&lt;3)|(1&lt;&lt;4);<br/><br/>	// PSC 초기값 설정 =&gt; 20usec tick이 되도록 설계 (50KHz)<br/>	TIM2-&gt;PSC = 72000/50 - 1 ;<br/><br/>	// ARR 초기값 설정 =&gt; 요청한 time msec에 해당하는 초기값 설정<br/>	TIM2-&gt;ARR = (time *50) ;<br/><br/>	// UG 이벤트 발생<br/>	TIM2-&gt;EGR |= (1&lt;&lt;0);<br/><br/>	// Update Interrupt Pending Clear<br/>	TIM2-&gt;SR &amp;= ~(1&lt;&lt;0);<br/><br/><br/>	// Update Interrupt Enable<br/>	TIM2-&gt;DIER |=(1&lt;&lt;0);<br/><br/>	// TIM2 start<br/>	TIM2-&gt;CR1 |= (1&lt;&lt;0); <br/><br/>	// Wait timeout<br/>	while((TIM2-&gt;SR &amp; (1&lt;&lt;0))==0);<br/><br/>	// Stop and Power off<br/>	Macro_Clear_Bit(TIM2-&gt;CR1, 0);<br/>	Macro_Clear_Bit(TIM2-&gt;DIER, 0);<br/>}<br/></p><h3 id="15f5971c-281a-806d-b4de-cb7a1a6b1b04" class=""></h3><p id="15f5971c-281a-803d-919d-d3e86c97a1eb" class="">
+</p><p id="15f5971c-281a-808d-ac5f-fb04513c38a4" class="">주어진 <code>TIM2_Delay</code> 함수는 STM32 마이크로컨트롤러에서 TIM2 타이머를 사용하여 지연(delay)을 구현하는 코드입니다. 이 함수는 지정된 시간(밀리초 단위)에 해당하는 지연을 발생시킵니다. 코드 각 부분을 설명하여 작동 방식을 명확하게 해드리겠습니다.</p><h3 id="15f5971c-281a-8027-b725-e9520fcabd59" class="">코드 분석</h3><ol type="1" id="15f5971c-281a-80a1-9064-c24dbd9d33d8" class="numbered-list" start="1"><li><strong>클록 활성화</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-807a-b0c4-f85cd66c2ce6" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+Macro_Set_Bit(RCC-&gt;APB1ENR, 0);
+
+</code></pre><p id="15f5971c-281a-804d-991c-d662995bbef3" class="">이 코드는 TIM2 타이머의 클록을 활성화하는 부분입니다. STM32에서 타이머를 사용하려면 해당 타이머의 클록을 활성화해야 하므로, <code>RCC-&gt;APB1ENR</code> 레지스터의 <code>TIM2</code> 비트를 설정하여 TIM2의 클록을 켭니다.</p></li></ol><ol type="1" id="15f5971c-281a-805f-b1ee-d963d16747d1" class="numbered-list" start="2"><li><strong>타이머 제어 레지스터 설정 (CR1)</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-80a3-8455-e52c17aac991" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;CR1 = (1&lt;&lt;3)|(1&lt;&lt;4);
+
+</code></pre><p id="15f5971c-281a-80ee-a301-d08f9a4886f5" class="">이 코드에서 <code>CR1</code>은 타이머 제어 레지스터입니다.</p><ul id="15f5971c-281a-80ef-bb2f-eaac7e4c9e85" class="bulleted-list"><li style="list-style-type:disc"><code>(1&lt;&lt;3)</code>은 <code>DIR</code> 비트를 설정하여 타이머를 <strong>down count</strong> 모드로 설정합니다. 즉, 타이머 카운터가 값을 감소시키면서 0에 도달하면 타이머가 리셋됩니다.</li></ul><ul id="15f5971c-281a-80a1-89f2-fcca494d2b16" class="bulleted-list"><li style="list-style-type:disc"><code>(1&lt;&lt;4)</code>는 <code>OPM</code> 비트를 설정하여 <strong>one pulse mode</strong>로 설정합니다. 이 모드에서는 타이머가 한 번 카운팅 후 멈추고, 다시 시작하려면 수동으로 설정을 초기화해야 합니다.</li></ul></li></ol><ol type="1" id="15f5971c-281a-80cb-ba10-e20475a14a06" class="numbered-list" start="3"><li><strong>Prescaler (PSC) 설정</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-8032-9893-c6fd2e992f32" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;PSC = 72000/50 - 1;
+
+</code></pre><p id="15f5971c-281a-8007-9931-feae08953cab" class=""><code>PSC</code>는 타이머의 프리스케일러로, 타이머의 클록 주파수를 조정합니다. STM32의 기본 타이머 클록은 72 MHz입니다. <code>72000 / 50 - 1</code>로 설정하면 타이머의 주파수는 50 kHz로 설정됩니다. 즉, 타이머의 tick 주기가 20μs가 됩니다.</p></li></ol><ol type="1" id="15f5971c-281a-809e-b45f-f774447a8e49" class="numbered-list" start="4"><li><strong>Auto-Reload Register (ARR) 설정</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-8010-a059-f3afc09367d8" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;ARR = (time * 50);
+
+</code></pre><p id="15f5971c-281a-80ef-bc58-e0bb9f25cb28" class=""><code>ARR</code>은 타이머의 자동 재로드 값입니다. 이 값은 타이머가 0에서 이 값에 도달하면 리셋되고, 이 값은 타이머의 동작 주기를 결정합니다. 여기서는 <code>time * 50</code>으로 설정되는데, <code>time</code>은 밀리초 단위로 주어집니다. <code>ARR</code> 값은 1밀리초에 50틱이므로, 요청된 밀리초에 해당하는 지연 시간만큼 타이머가 카운트하도록 설정합니다.</p></li></ol><ol type="1" id="15f5971c-281a-809b-9f50-c4468c7b863a" class="numbered-list" start="5"><li><strong>Update Generation (UG) 이벤트 발생</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-8083-a0a4-f46d712dc891" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;EGR |= (1&lt;&lt;0);
+
+</code></pre><p id="15f5971c-281a-803f-ad0c-ca245045d0e7" class=""><code>EGR</code> 레지스터의 <code>UG</code> (Update Generation) 비트를 설정하여 타이머 레지스터의 초기화 이벤트를 발생시킵니다. 이를 통해 설정된 <code>PSC</code> 및 <code>ARR</code> 값이 즉시 적용됩니다.</p></li></ol><ol type="1" id="15f5971c-281a-8049-ac96-c8b1cd0e435e" class="numbered-list" start="6"><li><strong>Update Interrupt Pending Flag 초기화</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-809b-becf-f73c3f4179ea" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;SR &amp;= ~(1&lt;&lt;0);
+
+</code></pre><p id="15f5971c-281a-8088-8ac3-cea0e8280450" class=""><code>SR</code> 레지스터는 상태 레지스터로, 타이머 상태를 나타냅니다. <code>SR</code>의 <code>UIF</code> (Update Interrupt Flag) 비트는 타이머가 업데이트 이벤트를 발생시킨 후 설정됩니다. 이 코드는 이 비트를 클리어하여, 지연 중에 타이머가 정상적으로 동작하도록 합니다.</p></li></ol><ol type="1" id="15f5971c-281a-8020-a6fd-f2f81e40abb8" class="numbered-list" start="7"><li><strong>Update Interrupt 활성화</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-8044-a8db-c74e4590433d" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;DIER |= (1&lt;&lt;0);
+
+</code></pre><p id="15f5971c-281a-80d3-9824-f99059ce00b9" class=""><code>DIER</code>는 인터럽트 허용 레지스터로, <code>UIE</code> (Update Interrupt Enable) 비트를 설정하여 타이머 업데이트 인터럽트를 활성화합니다. 이 비트가 설정되면, 타이머의 카운터가 지정된 값에 도달했을 때 인터럽트가 발생합니다.</p></li></ol><ol type="1" id="15f5971c-281a-80aa-9d22-e84711aad7e1" class="numbered-list" start="8"><li><strong>타이머 시작</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-80e0-88f6-e5bcf6a5135c" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+TIM2-&gt;CR1 |= (1&lt;&lt;0);
+
+</code></pre><p id="15f5971c-281a-804b-a03f-c0a8354a5293" class=""><code>CR1</code>의 <code>CEN</code> (Counter Enable) 비트를 설정하여 타이머 카운터를 시작합니다. 이 코드를 실행하면 타이머가 카운팅을 시작합니다.</p></li></ol><ol type="1" id="15f5971c-281a-80c6-b62f-d6a54e9515db" class="numbered-list" start="9"><li><strong>지연을 위한 대기</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-80a1-b044-e196e511afca" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+while((TIM2-&gt;SR &amp; (1&lt;&lt;0)) == 0);
+
+</code></pre><p id="15f5971c-281a-805f-9588-f7371beb198a" class="">이 <code>while</code> 루프는 <code>SR</code> 레지스터의 <code>UIF</code> (Update Interrupt Flag) 비트가 설정될 때까지 대기합니다. 즉, 타이머가 설정된 <code>ARR</code> 값에 도달할 때까지 대기합니다. <code>UIF</code> 비트가 설정되면 타이머가 지정된 시간을 완료했다는 의미입니다.</p></li></ol><ol type="1" id="15f5971c-281a-80a9-b9a1-e112455dc1f3" class="numbered-list" start="10"><li><strong>타이머 정지 및 전원 끄기</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-8066-b484-dee84beb651b" class="code"><code class="language-C" style="white-space:pre-wrap;word-break:break-all">c
+코드 복사
+Macro_Clear_Bit(TIM2-&gt;CR1, 0);
+Macro_Clear_Bit(TIM2-&gt;DIER, 0);
+
+</code></pre><ul id="15f5971c-281a-80b8-af86-d7b1df161e0e" class="bulleted-list"><li style="list-style-type:disc"><code>Macro_Clear_Bit(TIM2-&gt;CR1, 0)</code>는 <code>CEN</code> 비트를 클리어하여 타이머를 정지합니다.</li></ul><ul id="15f5971c-281a-805b-9f1c-fe5ab1cf8a65" class="bulleted-list"><li style="list-style-type:disc"><code>Macro_Clear_Bit(TIM2-&gt;DIER, 0)</code>는 <code>UIE</code> 비트를 클리어하여 타이머 인터럽트를 비활성화합니다.</li></ul></li></ol><h3 id="15f5971c-281a-8098-b72b-f0e076cfb153" class="">결론</h3><p id="15f5971c-281a-80e7-9b31-d0818ed52d53" class="">이 함수는 <code>time</code> 값(밀리초 단위)에 맞는 지연을 발생시키기 위해 TIM2 타이머를 설정하고 사용합니다. 주어진 <code>time</code>에 해당하는 시간 동안 타이머를 실행하고, 타이머가 종료되면 타이머를 정지시킵니다. 이를 통해 소프트웨어에서 타이머를 이용한 지연을 효율적으로 구현할 수 있습니다.</p><p id="15f5971c-281a-801e-9f3f-ec5b04c49fbe" class="">
+</p><p id="15f5971c-281a-8062-ae0a-d4d0d921e24e" class="">
+</p><p id="15f5971c-281a-80ce-90dc-deb530178059" class="">
+</p><p id="15f5971c-281a-80d8-8283-d965f2cb69ac" class="">ARR만 만지면 타이밍을 건들지않고 주기를 설정해줄수가있다.</p><p id="15f5971c-281a-805f-83c9-d926908a0dab" class="">
+</p><p id="15f5971c-281a-804d-8f76-e34c985d92fb" class="">capture / compare</p><p id="15f5971c-281a-80db-ace1-ea980dc8ac1b" class="">외부에서 들어오는 신호를 캡쳐 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15f5971c-281a-804a-b00b-ce4a31fc1031" class="code"><code class="language-C">void TIM3_Out_Freq_Generation(unsigned short freq)
+{
+	// Timer 주파수가 TIM3_FREQ가 되도록 PSC 설정
+	TIM3-&gt;PSC = 8;
+
+
+	// 요청한 주파수가 되도록 ARR 설정
+	TIM3-&gt;ARR = 8000000/freq-1;
+
+	// Duty Rate 50%가 되도록 CCR3 설정
+	TIM3-&gt;CCR3 = (TIM3-&gt;ARR)/2;
+
+	// Manual Update(UG 발생)
+	TIM3-&gt;EGR |= (0x01);
+
+	// Down Counter, Repeat Mode, Timer Start
+	TIM3-&gt;CR1 |=(1&lt;&lt;4)|(1&lt;&lt;0);
+	TIM3-&gt;CR1 &amp;=~((1&lt;&lt;3));
+
+}</code></pre><p id="15f5971c-281a-80c4-bd79-d50d27bee6e7" class="">
+</p><p id="15f5971c-281a-807b-aa93-db2473473cab" class="">
+</p><h1 id="15f5971c-281a-8089-9c72-e7a57a9a287d" class="">12.INTERRUPT</h1><p id="15f5971c-281a-8064-a564-e6a2fd921828" class="">일처리중에 내꺼먼저 ! </p><p id="15f5971c-281a-80ee-9d95-c4485e9b1e27" class="">exception  -돌던프로그램을 멈추고 새프로그램을 실행 </p><p id="15f5971c-281a-803d-a57e-ebb444ddd536" class="">인터럽트는 갔다가 돌아옴 </p><p id="15f5971c-281a-80fc-af6d-dc878e58a899" class="">key switch interrupt</p><p id="15f5971c-281a-80cc-bfd0-fb9dd452c089" class="">cpu가 해주는 것 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
