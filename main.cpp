@@ -58,7 +58,9 @@ class car;
 
 /*---------- FUNCTION DECLARATION START ----------*/
 
-int checkCollisionWithCars(frog *FUCKINGFROG, car* cars, int curCar);
+void lcdDrawChar(int x, int y, int num, unsigned short color, int scale);
+void lcdDrawNumber(int x, int y, int number, unsigned short color, int scale);
+int checkCollisionWithCars(frog *FUCKINGFROG, car *cars, int curCar);
 void addCar();
 static void Game_Init();
 static int jogKeyHandler();
@@ -80,8 +82,18 @@ extern volatile int USART1_rx_data;
 extern volatile int Jog_key_in;
 extern volatile int Jog_key;
 
-frog FUCKINGFROG;
-car cars[MAX_CAR];
+const unsigned char font[10][5] = {
+	{0b111, 0b101, 0b101, 0b101, 0b111}, // 0
+	{0b010, 0b010, 0b010, 0b010, 0b010}, // 1
+	{0b111, 0b001, 0b111, 0b100, 0b111}, // 2
+	{0b111, 0b001, 0b111, 0b001, 0b111}, // 3
+	{0b101, 0b101, 0b111, 0b001, 0b001}, // 4
+	{0b111, 0b100, 0b111, 0b001, 0b111}, // 5
+	{0b111, 0b100, 0b111, 0b101, 0b111}, // 6
+	{0b111, 0b001, 0b001, 0b001, 0b001}, // 7
+	{0b111, 0b101, 0b111, 0b101, 0b111}, // 8
+	{0b111, 0b101, 0b111, 0b001, 0b111}	 // 9
+};
 
 /*---------- GLOBAL VAR END ----------*/
 
@@ -138,6 +150,10 @@ public:
 	}
 	void moveCar();
 };
+
+// This should be here because it uses the class definition
+frog FUCKINGFROG;
+car cars[MAX_CAR];
 
 /*---------- CLASS END ----------*/
 
@@ -271,6 +287,38 @@ static void Sys_Init(void)
 
 /*---------- SYSTEM RELATED FUNCTION END ----------*/
 
+/*---------- LCD RELATED FUNCTION START ----------*/
+
+void lcdDrawChar(int x, int y, int num, unsigned short color, int scale)
+{
+	if (num < 0 || num > 9)
+		return;
+
+	const unsigned char *bitmap = font[num];
+	for (int row = 0; row < 5; row++)
+	{
+		for (int col = 0; col < 3; col++)
+		{
+			if (bitmap[row] & (1 << (2 - col)))
+			{
+				Lcd_Draw_Box(x + col * scale, y + row * scale, scale, scale, color);
+			}
+		}
+	}
+}
+
+void lcdDrawNumber(int x, int y, int number, unsigned short color, int scale)
+{
+	if (number < 0 || number > 99)
+		return;
+
+	lcdDrawChar(x, y, number / 10, color, scale);
+	// Char width + spaceing added to x
+	lcdDrawChar(x + 3 * scale + scale, y, number % 10, color, scale);
+}
+
+/*---------- LCD RELATED FUNCTION END ----------*/
+
 /*---------- GAME RELATED FUNCTION START ----------*/
 
 // check collision with cars
@@ -302,13 +350,13 @@ static void Game_Init()
 	FUCKINGFROG = frog(150, 220, FROG_SIZE_X, FROG_SIZE_Y, FROG_COLOR, SCHOOL);
 	FUCKINGFROG.drawSquare();
 	addCar();
+	Uart_Printf("Game Start\n");
 }
 
 // return -1 if game over
 // else return 0
 static int jogKeyHandler()
 {
-	Uart1_Printf("KEY\n");
 	FUCKINGFROG.moveFrog(Jog_key);
 	// check collision with cars
 	if (checkCollisionWithCars(&FUCKINGFROG, cars, curCar))
@@ -342,10 +390,18 @@ static int timerHandler()
 static void Game_Over()
 {
 	TIM4_Repeat_Interrupt_Enable(0, 0);
-	Uart_Printf("Game Over, your score is %d\n. Please press any key to continue.\n", score);
-	Jog_Wait_Key_Pressed();
-	Jog_Wait_Key_Released();
-	Uart_Printf("Game Start\n");
+	Uart_Printf("Game Over, your score is %d.\nPress Push Button to continue.\n", score);
+	Lcd_Clr_Screen();
+	lcdDrawNumber(80, 50, score % 100, WHITE, 20);
+	static int k = 0;
+	while(1)
+	{
+		if (Jog_key == 4 || Jog_key == 5)
+		{
+			Jog_key_in = 0;
+			break;
+		}
+	}
 }
 
 /*---------- GAME RELATED FUNCTION END ----------*/
@@ -355,7 +411,7 @@ static void Game_Over()
 extern "C" void Main()
 {
 	Sys_Init();
-	Uart_Printf("Game Example\n");
+	Uart_Printf("Game Example\n\n");
 
 	Lcd_Init();
 	Jog_Poll_Init();
