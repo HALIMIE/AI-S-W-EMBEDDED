@@ -60,7 +60,7 @@ class car;
 
 void lcdDrawChar(int x, int y, int num, unsigned short color, int scale);
 void lcdDrawNumber(int x, int y, int number, unsigned short color, int scale);
-int checkCollisionWithCars(frog *FUCKINGFROG, car *cars, int curCar);
+int checkCollisionWithCars(frog *myFROG, car *cars, int curCar);
 void addCar();
 static void Game_Init();
 static int jogKeyHandler();
@@ -152,7 +152,7 @@ public:
 };
 
 // This should be here because it uses the class definition
-frog FUCKINGFROG;
+frog myFROG;
 car cars[MAX_CAR];
 
 /*---------- CLASS END ----------*/
@@ -322,10 +322,10 @@ void lcdDrawNumber(int x, int y, int number, unsigned short color, int scale)
 /*---------- GAME RELATED FUNCTION START ----------*/
 
 // check collision with cars
-int checkCollisionWithCars(frog *FUCKINGFROG, car cars[], int curCar)
+int checkCollisionWithCars(frog *myFROG, car cars[], int curCar)
 {
 	for (int i = 0; i < curCar; i++)
-		if (FUCKINGFROG->checkCollision(&cars[i]))
+		if (myFROG->checkCollision(&cars[i]))
 			return 1;
 	return 0;
 }
@@ -347,8 +347,8 @@ static void Game_Init()
 	score = 0;
 	curCar = 0;
 	Lcd_Clr_Screen();
-	FUCKINGFROG = frog(150, 220, FROG_SIZE_X, FROG_SIZE_Y, FROG_COLOR, SCHOOL);
-	FUCKINGFROG.drawSquare();
+	myFROG = frog(150, 220, FROG_SIZE_X, FROG_SIZE_Y, FROG_COLOR, SCHOOL);
+	myFROG.drawSquare();
 	addCar();
 	Uart_Printf("Game Start\n");
 }
@@ -357,14 +357,14 @@ static void Game_Init()
 // else return 0
 static int jogKeyHandler()
 {
-	FUCKINGFROG.moveFrog(Jog_key);
+	myFROG.moveFrog(Jog_key);
 	// check collision with cars
-	if (checkCollisionWithCars(&FUCKINGFROG, cars, curCar))
+	if (checkCollisionWithCars(&myFROG, cars, curCar))
 	{
 		return GAME_OVER;
 	}
 	// check border
-	FUCKINGFROG.checkBorder();
+	myFROG.checkBorder();
 	Jog_key_in = 0;
 	return 0;
 }
@@ -378,7 +378,7 @@ static int timerHandler()
 		cars[i].moveCar();
 	}
 	// check collision with frog
-	if (checkCollisionWithCars(&FUCKINGFROG, cars, curCar))
+	if (checkCollisionWithCars(&myFROG, cars, curCar))
 	{
 		return GAME_OVER;
 	}
